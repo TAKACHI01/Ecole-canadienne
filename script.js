@@ -198,3 +198,8 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     });
 });
+// JavaScript to toggle menu visibility when the hamburger icon is clicked
+document.querySelector('.menu-toggle').addEventListener('click', function() {
+    this.classList.toggle('active'); // Toggle 'active' class on the button
+    document.querySelector('.menu').classList.toggle('active'); // Toggle the menu visibility
+});
