@@ -1,0 +1,780 @@
+/* Reset margin and padding for all elements */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: all ease 0.4s;
+    scroll-behavior: smooth;
+    
+}
+html{
+    scroll-behavior: smooth;
+}
+
+/* Navbar styles */
+.navbar {
+    height: 100px;
+    background-color: #1e293b;
+    padding: 10px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000; /* Keeps navbar on top */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    animation: slideDownNavbar 0.5s ease-out forwards;
+}
+
+/* Navbar slide-down animation */
+@keyframes slideDownNavbar {
+    from {
+        top: -100px;
+    }
+    to {
+        top: 0;
+    }
+}
+
+/* Logo styles */
+.logo {
+    background-color: aliceblue;
+    padding: 10px;
+    border-radius: 25px;
+    position: relative;
+    transition: transform 0.4s ease-in-out;
+}
+
+/* Logo hover effect */
+.logo:hover {
+    transform: scale(1.1) rotate(10deg);
+    box-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
+}
+
+/* Navbar container */
+.contain {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Navbar menu */
+.menu {
+    display: flex;
+    gap: 55px;
+    font-size: 1.2rem;
+    list-style: none;
+    color: whitesmoke;
+    padding-right: 40px;
+    animation: fadeInMenu 1s ease-in-out forwards;
+}
+
+/* Menu fade-in animation */
+@keyframes fadeInMenu {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.menu a {
+    text-decoration: none;
+    color: whitesmoke;
+    font-weight: bold;
+    position: relative;
+    padding: 5px 0;
+}
+
+/* Menu link hover effect with underline animation */
+.menu a::after {
+    content: '';
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: red;
+    transition: width 0.3s ease-in-out;
+}
+
+.menu a:hover::after {
+    width: 100%;
+}
+
+.menu a:hover {
+    color: red;
+}
+
+/* Hover effect for menu items */
+.menu li:hover {
+    color: red;
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+/* Hamburger Menu Styles */
+.hamburger-menu {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 5px;
+}
+
+.hamburger-menu span {
+    width: 25px;
+    height: 3px;
+    background-color: whitesmoke;
+    transition: all 0.3s ease;
+}
+
+@media (max-width: 768px) {
+    .menu {
+        display: none;
+        flex-direction: column;
+        background-color: #1e293b;
+        position: absolute;
+        top: 100px;
+        right: 0;
+        width: 200px;
+        padding: 20px;
+        border-radius: 0 0 0 10px;
+    }
+
+    .menu.show {
+        display: flex;
+        animation: slideInMenu 0.5s forwards;
+    }
+
+    @keyframes slideInMenu {
+        from {
+            opacity: 0;
+            transform: translateX(100%);
+        }
+        to {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+
+    .hamburger-menu {
+        display: flex;
+    }
+}
+
+/* Home Section */
+.home {
+    height: 100vh;
+    background-image: url('ecole.webp');
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative; /* Make sure overlay is positioned within this section */
+    overflow: hidden;
+}
+
+.home .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(2, 2, 86, 0.799); /* Blue with ~80% opacity */
+    z-index: 1; /* Makes sure the overlay stays above the background but below the text */
+    animation: fadeInOverlay 1s ease-in-out forwards;
+}
+
+@keyframes fadeInOverlay {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 0.8;
+    }
+}
+
+.home .home-content {
+    position: relative;
+    z-index: 2; /* Ensures text stays above the overlay */
+    color: white;
+    font-size: 2rem;
+    animation: fadeInContent 1s ease-in-out forwards;
+}
+
+@keyframes fadeInContent {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.home-logo {
+    width: 150px;
+    margin-bottom: 20px;
+    animation: rotateLogo 5s linear step-start;
+}
+
+@keyframes rotateLogo {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.home h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    animation: bounceInTitle 1.5s ease-out forwards;
+}
+
+@keyframes bounceInTitle {
+    0% {
+        transform: scale(0.3);
+        opacity: 0;
+    }
+    50% {
+        transform: scale(1.05);
+        opacity: 1;
+    }
+    70% {
+        transform: scale(0.9);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.home p {
+    font-size: 1.5rem;
+    font-weight: 300;
+    animation: fadeInParagraph 2s ease-out forwards;
+}
+
+@keyframes fadeInParagraph {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.btn-scroll {
+    display: inline-block;
+    margin-top: 30px;
+    padding: 12px 25px;
+    background-color: #ff4757;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    text-decoration: none;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+}
+
+.btn-scroll:hover {
+    background-color: #ff6b81;
+    transform: translateY(-5px);
+}
+
+/* About Section */
+.about {
+    height: auto;
+    padding: 50px 10%;
+    background-color: aliceblue;
+    color: #333;
+    animation: fadeInSection 1s ease-in-out forwards;
+}
+
+@keyframes fadeInSection {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.about-content {
+    background-color: white;
+    padding: 40px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    transition: transform 0.4s ease-in-out, box-shadow 0.4s ease-in-out;
+    position: relative;
+    overflow: hidden;
+}
+
+
+
+.about-content:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+    border: 3px solid #1e293b;
+}
+
+.hidden-text {
+    display: none;
+    margin-top: 20px;
+    font-size: 1rem;
+    color: #333;
+    opacity: 0;
+    transition: opacity 0.5s ease-out, max-height 0.5s ease-out, transform 0.5s ease-out;
+}
+
+.hidden-text.show {
+    display: block;
+    opacity: 1;
+    max-height: 1000px; /* Arbitrary large value to allow content to expand */
+    transform: translateY(20px);
+}
+
+/* Toggle Button Styles */
+button.toggle-content {
+    background-color: #1e293b;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+}
+
+button.toggle-content:hover {
+    background-color: #3b4f71;
+    transform: scale(1.05);
+}
+
+/* Courses Section */
+.courses {
+    background-color: #f4f4f4;
+    padding: 50px 10%;
+    color: #333;
+    animation: fadeInSection 1s ease-in-out forwards;
+}
+
+.courses-content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.courses h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 2.5rem;
+    color: #1e293b;
+    position: relative;
+    display: inline-block;
+}
+
+.courses h2::after {
+    content: '';
+    width: 50px;
+    height: 3px;
+    background-color: #ff4757;
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.courses-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.course-card {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.course-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+}
+
+.course-image {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.course-card:hover .course-image {
+    transform: scale(1.1);
+}
+
+.course-card h3 {
+    padding: 15px;
+    font-size: 1.5rem;
+    color: #1e293b;
+    transition: color 0.3s ease;
+}
+
+.course-card h3:hover {
+    color: #ff4757;
+}
+
+.course-description {
+    padding: 0 15px 15px 15px;
+    font-size: 1rem;
+    color: #555;
+}
+
+.learn-more-btn {
+    background-color: #1e293b;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    margin: 0 15px 15px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+}
+
+.learn-more-btn:hover {
+    background-color: #3b4f71;
+    transform: scale(1.05);
+}
+
+.courses-text {
+    text-decoration: none;
+    color: whitesmoke;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.courses-text:hover {
+    color: #ff6b81;
+}
+
+/* Testimonials Section */
+.testimonials {
+    background-color: #ffffff;
+    padding: 50px 10%;
+    color: #333;
+    animation: fadeInSection 1s ease-in-out forwards;
+}
+
+.testimonials-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.testimonials h2 {
+    font-size: 2.5rem;
+    color: #1e293b;
+    margin-bottom: 40px;
+    position: relative;
+    display: inline-block;
+}
+
+.testimonials h2::after {
+    content: '';
+    width: 50px;
+    height: 3px;
+    background-color: #ff4757;
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.testimonials-slider {
+    display: flex;
+    overflow-x: auto;
+    gap: 20px;
+    scroll-behavior: smooth;
+}
+
+.testimonial-card {
+    background-color: #f4f4f4;
+    padding: 20px;
+    border-radius: 10px;
+    min-width: 250px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.testimonial-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+}
+
+.testimonial-text {
+    font-style: italic;
+    margin-bottom: 15px;
+}
+
+.testimonial-author {
+    font-weight: bold;
+    color: #1e293b;
+}
+
+/* Contact Section */
+.contact {
+    background-color: #f4f4f4;
+    padding: 50px 10%;
+    color: #333;
+    animation: fadeInSection 1s ease-in-out forwards;
+}
+
+.contact-content {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.contact h2 {
+    font-size: 2.5rem;
+    color: #1e293b;
+    margin-bottom: 40px;
+    position: relative;
+    display: inline-block;
+}
+
+.contact h2::after {
+    content: '';
+    width: 50px;
+    height: 3px;
+    background-color: #ff4757;
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    padding: 12px;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: #1e293b;
+    outline: none;
+}
+
+.submit-btn {
+    padding: 12px;
+    background-color: #1e293b;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+}
+
+.submit-btn:hover {
+    background-color: #3b4f71;
+    transform: scale(1.05);
+}
+
+/* Footer Section */
+.footer {
+    background-color: #1e293b;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    animation: fadeInFooter 1s ease-in-out forwards;
+}
+
+@keyframes fadeInFooter {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.footer p {
+    font-size: 1rem;
+    margin: 10px 0;
+}
+
+.social-links {
+    margin-top: 10px;
+}
+
+.social-links a {
+    text-decoration: none;
+    color: white;
+    margin: 0 15px;
+    font-size: 1.5rem;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.social-links a:hover {
+    color: #ff6b81;
+    transform: scale(1.2);
+}
+
+@media (max-width: 768px) {
+    .social-links a {
+        font-size: 1.2rem;
+        margin: 0 10px;
+    }
+}
+
+.text {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 400;
+    line-height: 1.6;
+}
+
+.logo-text {
+    color: #1e3a8a;
+    font-family: 'Georgia', serif;
+    font-size: 1.5rem;
+}
+
+.back {
+    text-decoration: none;
+    color: aliceblue;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1rem;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.back:hover {
+    color: red;
+    transform: scale(1.1);
+}
+
+/* Modal Styles */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.6);
+    animation: fadeInModal 0.5s ease forwards;
+}
+
+@keyframes fadeInModal {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 10% auto;
+    padding: 20px;
+    border: 2px solid #888;
+    width: 80%;
+    border-radius: 10px;
+    animation: slideInModal 0.5s ease forwards;
+}
+
+@keyframes slideInModal {
+    from {
+        transform: translateY(-50px);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
+.close-button {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    transition: color 0.3s ease;
+    cursor: pointer;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: black;
+    text-decoration: none;
+}
+
+/* Additional Animations */
+@keyframes slideDown {
+    from {
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Scroll Behavior */
+html {
+    scroll-behavior: smooth;
+}
+            

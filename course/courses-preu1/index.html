@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course Menu</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+     <!-- Navbar -->
+     <nav class="navbar">
+        <div class="contain">
+            <a href="https://ec-tunis.com/">
+                <img src="https://ec-tunis.com/wp-content/uploads/2021/05/Design-sans-titre-3.png" alt="Banner" height="80px" class="logo">
+            </a>
+            <ol class="menu">
+                <li><a href="../../index.html">Home</a></li>
+                <li><a href="../../index.html">About</a></li>
+                <li><a href="../index.html">Courses</a></li>
+            </ol>
+        </div>
+    </nav>
+    <div class="container">
+        <!-- Header Section -->
+        <header class="header">
+            <h1>Select Your Course</h1>
+            <p>Cela englobe l'ensemble des cours de SN ou CST de la préuniversitaire 1.<p>
+        </header>
+
+        <!-- Search Bar -->
+        <div class="search-container">
+            <input type="text" id="search-bar" placeholder="Search courses...">
+        </div>
+
+        <!-- Course Cards -->
+        <section class="course-cards" id="course-cards">
+          
+            <div class="course-card" data-course="cybersecurity">
+                <img src="images/cybersecurity-icon.png" alt="Cybersecurity">
+                <a href="tous-cours/Info/index.html" target="_blank">
+                <h3 style="text-decoration:none ;"  >Cybersecurity</h3>
+                <p>Protect and defend systems from digital threats.</p>
+            </a>
+            </div>
+     
+            <div class="course-card" data-course="web-development">
+                <img src="images/webdev-icon.png" alt="Web Development">
+                <h3>Web Development</h3>
+                <p>Create and design websites from scratch.</p>
+            </div>
+            <div class="course-card" data-course="data-science">
+                <img src="images/data-science-icon.png" alt="Data Science">
+                <h3>Data Science</h3>
+                <p>Analyze data to uncover trends and insights.</p>
+            </div>
+            <div class="course-card" data-course="graphic-design">
+                <img src="images/graphic-design-icon.png" alt="Graphic Design">
+                <h3>Graphic Design</h3>
+                <p>Learn the art of visual communication and design.</p>
+            </div>
+            <div class="course-card" data-course="digital-marketing">
+                <img src="images/digital-marketing-icon.png" alt="Digital Marketing">
+                <h3>Digital Marketing</h3>
+                <p>Master the strategies of online marketing and SEO.</p>
+            </div>
+            <div class="course-card" data-course="mobile-development">
+                <img src="images/mobile-dev-icon.png" alt="Mobile Development">
+                <h3>Mobile Development</h3>
+                <p>Build apps for Android and iOS platforms.</p>
+            </div>
+            <div class="course-card" data-course="Economie">
+                <img src="images/mobile-dev-icon.png" alt="Mobile Development">
+                <h3>Economie</h3>
+                <p>Build apps for Android and iOS platforms.</p>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer Section -->
+    <footer class="footer">
+        <p>&copy; 2025 Course Platform | Designed with 💙 by Your Company</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,528 @@
+/* Reset & Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+/* Add at the top of your styles.css */
+:root {
+    --primary-color: #1e90ff;
+    --secondary-color: #ffdd57;
+    --background-color: #fff;
+    --text-color: #333;
+}
+
+body.dark-theme {
+    --background-color: #121212;
+    --text-color: #f4f4f4;
+}
+
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Theme Toggle Styles */
+.theme-toggle {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    margin-left: 20px;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 24px;
+    background: #ccc;
+    border-radius: 34px;
+    transition: background 0.3s;
+}
+
+.switch::before {
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    left: 2px;
+    top: 2px;
+    background: white;
+    border-radius: 50%;
+    transition: transform 0.3s;
+}
+
+input[type="checkbox"] {
+    display: none;
+}
+
+input[type="checkbox"]:checked + .switch {
+    background: var(--secondary-color);
+}
+
+input[type="checkbox"]:checked + .switch::before {
+    transform: translateX(26px);
+}
+
+
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    overflow-x: hidden; /* Prevent horizontal scroll due to animations */
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* Navigation Bar */
+.navbar {
+    background: #1e90ff;
+    color: #fff;
+    padding: 10px 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    animation: slideDown 0.5s ease-out forwards; /* Animation Added */
+}
+
+.navbar .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navbar .logo a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.navbar .nav-links {
+    list-style: none;
+    display: flex;
+    opacity: 0;
+    animation: fadeIn 1s ease-in forwards; /* Animation Added */
+    animation-delay: 0.5s;
+}
+
+.navbar .nav-links li {
+    margin-left: 20px;
+}
+
+.navbar .nav-links a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.navbar .nav-links a:hover {
+    color: #ffdd57;
+}
+
+.hamburger {
+    display: none;
+    cursor: pointer;
+    opacity: 0;
+    animation: fadeIn 1s ease-in forwards; /* Animation Added */
+    animation-delay: 1s;
+}
+
+.hamburger i {
+    font-size: 1.5rem;
+}
+
+
+/* Hero Section Styles */
+.hero {
+    position: relative;
+    background-image: url('big-image.jpg'); /* Replace with your background image */
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    color: #fff; /* White text for contrast */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4); /* Black background with 40% opacity */
+    z-index: 1; /* Place it behind the text */
+}
+
+.hero .container {
+    position: relative; /* Ensure the text is on top of the overlay */
+    z-index: 2; /* Make sure text is above the overlay */
+    text-align: center;
+}
+
+.hero h1, .hero p {
+    margin: 0;
+    padding: 0;
+}
+
+.hero h1 {
+    font-size: 3rem; /* Adjust size as needed */
+    font-weight: bold;
+}
+
+.hero p {
+    font-size: 1.25rem; /* Adjust size as needed */
+    margin-top: 10px;
+}
+
+.hero .btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #ff9800;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+
+.hero .btn:hover {
+    background-color: #e68900;
+}
+
+
+/* Sections */
+.section {
+    padding: 80px 0;
+    opacity: 0;
+    transform: translateY(50px);
+    animation: fadeInUp 1s ease-out forwards; /* Animation Added */
+    animation-delay: 1.8s;
+}
+
+.section h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 2.5rem;
+    position: relative;
+    opacity: 0;
+    transform: translateY(-20px);
+    animation: fadeIn 1s ease-in forwards; /* Animation Added */
+    animation-delay: 2s;
+}
+
+.section h2::after {
+    content: '';
+    width: 60px;
+    height: 4px;
+    background: #1e90ff;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -10px;
+}
+
+/* PDF Section */
+.pdf-container {
+    margin-bottom: 20px;
+    border: 2px solid #1e90ff;
+    border-radius: 5px;
+    overflow: hidden;
+    opacity: 0;
+    transform: scale(0.95);
+    animation: fadeInScale 0.8s ease-out forwards; /* Animation Added */
+    animation-delay: 2.2s;
+}
+
+/* Video Section */
+.video-container {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 */
+    height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transform: scale(0.95);
+    animation: fadeInScale 0.8s ease-out forwards; /* Animation Added */
+    animation-delay: 2.4s;
+}
+
+.video-container video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* Resources Section */
+.resources-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 1s ease-out forwards; /* Animation Added */
+    animation-delay: 2.6s;
+}
+
+.resource-card {
+    background: #fff;
+    border: 2px solid #1e90ff;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    color: #333;
+    text-decoration: none;
+    transition: transform 0.3s ease, background 0.3s ease;
+    opacity: 0;
+    transform: scale(0.95);
+    animation: fadeInScale 0.8s ease-out forwards; /* Animation Added */
+    animation-delay: 2.8s;
+}
+
+.resource-card:hover {
+    transform: translateY(-10px);
+    background: #1e90ff;
+    color: #fff;
+}
+
+.resource-card i {
+    font-size: 3rem;
+    margin-bottom: 15px;
+    color: #1e90ff;
+    transition: color 0.3s ease;
+    opacity: 0;
+    transform: scale(0.8);
+    animation: fadeInScale 0.8s ease-out forwards; /* Animation Added */
+    animation-delay: 3s;
+}
+
+.resource-card:hover i {
+    color: #fff;
+}
+
+.resource-card h3 {
+    margin-bottom: 10px;
+}
+
+.resource-card p {
+    font-size: 0.9rem;
+}
+
+/* Footer */
+footer {
+    background: #333;
+    color: #fff;
+    padding: 40px 0;
+    opacity: 0;
+    transform: translateY(50px);
+    animation: fadeInUp 1s ease-out forwards; /* Animation Added */
+    animation-delay: 3.2s;
+}
+
+.footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 13rem;
+    align-items: center;
+}
+
+.footer-logo a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.footer-links a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 10px;
+    transition: color 0.3s ease;
+}
+/* Initial State for Animations */
+.animate-on-scroll {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+/* Typing Effect Styles */
+#typing {
+    border-right: 2px solid var(--text-color);
+    padding-right: 5px;
+    white-space: nowrap;
+    overflow: hidden;
+    display: inline-block;
+    animation: blink 0.7s infinite;
+}
+
+@keyframes blink {
+    0% { border-color: transparent; }
+    50% { border-color: var(--text-color); }
+    100% { border-color: transparent; }
+}
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation: none !important;
+        transition: none !important;
+    }
+    
+    #typing {
+        border: none;
+    }
+}
+
+
+/* Active State */
+.animate-on-scroll.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+.footer-links a:hover {
+    color: #ffdd57;
+}
+
+.social-media a {
+    color: #fff;
+    margin: 0 5px;
+    font-size: 1.2rem;
+    transition: color 0.3s ease;
+}
+
+.social-media a:hover {
+    color: #1e90ff;
+}
+
+/* Scroll Progress Bar Styles */
+#scroll-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 5px;
+    background: var(--secondary-color);
+    z-index: 1001;
+    transition: width 0.25s ease-out;
+}
+
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 0.9rem;
+}
+
+/* Back to Top Button */
+#back-to-top {
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    background: #1e90ff;
+    color: #fff;
+    border: none;
+    padding: 15px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: none;
+    font-size: 1.2rem;
+    z-index: 1000;
+    transition: background 0.3s ease;
+    opacity: 0;
+    transform: scale(0.8);
+    animation: fadeInScale 0.5s ease-out forwards; /* Animation Added */
+    animation-delay: 4s;
+}
+
+#back-to-top:hover {
+    background: #ffdd57;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .navbar .nav-links {
+        position: fixed;
+        top: 60px;
+        right: -100%;
+        height: 100vh;
+        width: 200px;
+        background: #1e90ff;
+        flex-direction: column;
+        align-items: center;
+        transition: right 0.3s ease;
+    }
+
+    .navbar .nav-links li {
+        margin: 20px 0;
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+    .nav-active {
+        right: 0;
+    }
+
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+}
+
+/* Keyframe Animations */
+
+/* Slide Down for Navbar */
+@keyframes slideDown {
+    from {
+        transform: translateY(-100%);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
+/* Fade In */
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+/* Fade In Up */
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Fade In Scale */
+@keyframes fadeInScale {
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Pop In for Buttons */
+@keyframes popIn {
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}

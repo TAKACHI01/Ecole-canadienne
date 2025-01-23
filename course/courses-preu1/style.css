@@ -1,0 +1,193 @@
+*{
+    scroll-behavior:smooth;
+}
+
+/* General Styles */*
+body {
+    scroll-behavior: smooth;
+    text-decoration: none !important;
+    font-family: 'Roboto', sans-serif;
+    background-color: #f4f6f9;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+/* Navbar styles */
+.navbar {
+    height: 100px;
+    background-color: #1e293b;
+    padding: 10px;
+   
+}
+
+/* Logo styles */
+.logo {
+    background-color: aliceblue;
+    padding: 10px;
+    border-radius: 25px;
+    position: relative;
+    transition: transform 0.4s ease-in-out;
+}
+
+/* Logo hover effect */
+.logo:hover {
+    transform: scale(1.1);
+}
+
+/* Navbar container */
+.contain {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Navbar menu */
+.menu {
+    display: flex;
+    gap: 55px;
+    font-size: 1.2rem;
+    list-style: none;
+    color: whitesmoke;
+    padding-right: 40px;
+}
+
+.menu a {
+    text-decoration: none;
+    color: whitesmoke;
+    font-weight: bold;
+}
+
+.menu a:hover {
+    color: red;
+}
+
+/* Hover effect for menu items */
+.menu li:hover {
+    color: red;
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px;
+}
+
+/* Header Section */
+header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+header p {
+    font-size: 1.1rem;
+    color: #555;
+}
+
+/* Search Bar */
+.search-container {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+#search-bar {
+    width: 80%;
+    max-width: 500px;
+    padding: 12px;
+    font-size: 1rem;
+    border-radius: 25px;
+    border: 1px solid #ddd;
+    background-color: #fff;
+    transition: all 0.3s ease;
+}
+
+#search-bar:focus {
+    outline: none;
+    border-color: #3498db;
+    box-shadow: 0 0 8px rgba(52, 152, 219, 0.5);
+}
+
+/* Course Cards */
+.course-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+    text-decoration: none;
+    margin-top: 40px;
+}
+
+.course-card {
+    text-decoration: none;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.course-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.course-card img {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 20px;
+    transition: transform 0.3s ease;
+}
+
+.course-card img:hover {
+    transform: scale(1.1);
+}
+
+.course-card h3 {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 10px;
+    text-decoration: none !important;
+}
+
+.course-card p {
+    text-decoration: none !important;
+    font-size: 1rem;
+    color: #555;
+}
+.course-card a {
+
+    text-decoration: none !important;
+}
+
+/* Footer Section */
+.footer {
+    text-align: center;
+    margin-top: 40px;
+    font-size: 0.9rem;
+    color: #777;
+    padding: 20px 0;
+    background-color: #f9f9f9;
+    border-top: 1px solid #ddd;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .course-cards {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .course-cards {
+        grid-template-columns: 1fr;
+    }
+}

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Educational Resource Page</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHq6X6wJi1IbF5psv1k+FTxV2QJb+0XDxwY6yIvX6BQMSf85D71KpP8Rjh+Xbwp+UZZ1EwQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body class="animate-on-scroll">
+    <!-- Add this right after the opening <body> tag -->
+<div id="scroll-progress"></div>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">
+                <a href="https://ec-tunis.com/">Ecole Canadienne de Tunis</a>
+            </div>
+
+            <ul class="nav-links animate-on-scroll">
+                <div class="theme-toggle">
+                <input type="checkbox" id="theme-switch" />
+                <label for="theme-switch" class="switch"></label>
+                </div>
+
+                <li><a href="../../../../index.html">home</a></li>
+                <li><a href="../../../index.html">Courses</a></li>
+                <li><a href="#video-section">Video</a></li>
+                <li><a href="#footer">Resources </a></li>
+            </ul>
+            <div class="hamburger">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav> 
+
+    <!-- Hero Section -->
+    <header class="hero animate-on-scroll">
+        <div class="overlay"></div>
+        <div class="container">
+            <h1>Tu es le meilleur ! </h1>
+            <p>Plongez dans l'Univers de la Cyber Sécurité : Un Cours Complet pour Maîtriser les Défis Numériques</p>
+            <a href="#pdf-section" class="btn">Get Started</a>
+        </div>
+    </header>
+    
+    <!-- PDF Section -->
+    <section id="pdf-section" class="section  animate-on-scroll">
+        <div class="container">
+            <h2>Downloadable PDF Guide</h2>
+            <div class="pdf-container">
+                <iframe src="path/to/your/document.pdf" width="100%" height="600px">
+                    This browser does not support PDFs. Please download the PDF to view it: <a href="path/to/your/document.pdf">Download PDF</a>.
+                </iframe>
+            </div>
+            <a href="path/to/your/document.pdf" class="btn" download>Download PDF</a>
+        </div>
+    </section>
+
+    <!-- Video Section -->
+    <section id="video-section" class="section bg-light">
+        <div class="container">
+            <h2>Instructional Video</h2>
+            <div class="video-container">
+                <video controls>
+                    <source src="path/to/your/video.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+        </div>
+    </section>
+
+    <!-- Resources Section -->
+    <section id="resources" class="section">
+        <div class="container">
+            <h2>Additional Resources</h2>
+            <div class="resources-grid">
+                <a href="https://resource1.com" target="_blank" class="resource-card">
+                    <i class="fas fa-book"></i>
+                    <h3>Resource One</h3>
+                    <p>Brief description of resource one.</p>
+                </a>
+                <a href="https://resource2.com" target="_blank" class="resource-card">
+                    <i class="fas fa-video"></i>
+                    <h3>Resource Two</h3>
+                    <p>Brief description of resource two.</p>
+                </a>
+                <a href="https://resource3.com" target="_blank" class="resource-card">
+                    <i class="fas fa-podcast"></i>
+                    <h3>Resource Three</h3>
+                    <p>Brief description of resource three.</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <a href="https://ec-tunis.com/">Ecole Canadienne de Tunis</a>
+                </div>
+                <div class="footer-links">
+                    <a href="#pdf-section">PDF</a>
+                    <a href="#video-section">Video</a>
+                    <a href="#resources">Resources</a>
+                </div>
+                <div class="social-media">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Anas Sbaa. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top"><i class="fas fa-chevron-up"></i></button>
+
+    <script src="script.js"></script>
+</body>
+</html>
